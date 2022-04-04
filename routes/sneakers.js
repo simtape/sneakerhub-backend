@@ -33,3 +33,6 @@ router.post('/insshoes', async (res, req) => {
     }
 });
 
+
+module.exports = router;
+
