@@ -16,21 +16,23 @@ router.get('/allshoes', async (req, res) => {
     }
 });
 
-router.post('/insshoes', async (res, req) => {
+router.post('/insshoes',  async(req, res) => {
     const sneaker = new Sneaker({
         name: req.body.name,
         retail: req.body.retail
 
-    })
-
+    });
     try {
-        const savedSneaker = await post.save();
+        const savedSneaker = await sneaker.save();
         res.json(savedSneaker);
 
-    } catch (err) {
-        res.json({message: err});
+    } catch(err) {
+        console.log(err)
+        res.json({ message: err });
 
     }
+
+
 });
 
 

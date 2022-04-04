@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const sneakers = require('./routes/sneakers');
+app.use(bodyParser.json());
 
 app.use('/sneakers', sneakers);
 
