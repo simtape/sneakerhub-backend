@@ -5,7 +5,7 @@ const Sneaker = require('../models/Sneaker');
 //endpoints
 router.get('/allshoes', async (req, res) => {
     try {
-        const sneakers = await (await Sneaker.find()).sort({ name: 1 });
+        const sneakers = await Sneaker.find();
         res.json({ sneakers });
         console.log(sneakers);
 
